@@ -86,18 +86,6 @@
             bindings = <&kp EQUAL>;
             key-positions = <33 34>;
         };
-
-        fun- {
-            bindings = <&kp LS(MINUS)>;
-            key-positions = <30 31>;
-            layers = <1>;
-        };
-
-        fun+ {
-            bindings = <&kp LS(EQUAL)>;
-            key-positions = <33 34>;
-            layers = <1>;
-        };
     };
 
     keymap {
