@@ -76,6 +76,28 @@
             bindings = <&soft_off>;
             key-positions = <14 28 40>;
         };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <30 31>;
+        };
+
+        equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <33 34>;
+        };
+
+        fun- {
+            bindings = <&kp LS(MINUS)>;
+            key-positions = <30 31>;
+            layers = <1>;
+        };
+
+        fun+ {
+            bindings = <&kp LS(EQUAL)>;
+            key-positions = <33 34>;
+            layers = <1>;
+        };
     };
 
     keymap {
@@ -96,11 +118,11 @@
 
         FUNLAYER {
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8         &kp F9    &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp PAGE_UP    &kp HOME  &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp HOME         &kp PAGE_DOWN  &kp END   &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT     &kp F11   &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans         &trans    &trans
+&kp GRAVE        &kp F1     &kp F2     &kp F3     &kp F4     &kp F5             &mmv MOVE_UP     &kp F6     &kp F7        &kp F8         &kp F9        &kp F10        &kp F11
+&kp LS(TAB)      &none      &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)          &mmv MOVE_DOWN   &none      &none         &kp PAGE_UP    &none         &kp LC(P)      &kp F12
+&kp CAPSLOCK     &kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &none              &mmv MOVE_LEFT   &kp LC(H)  &kp LS(HOME)  &kp PAGE_DOWN  &kp END       &kp LS(COLON)  &kp RET
+&rgb_ug RGB_TOG  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &rgb_ug RGB_EFF    &mmv MOVE_RIGHT  &kp LC(N)  &none         &kp LS(LT)     &kp LS(GT)    &kp LS(QMARK)  &kp LS(DQT)
+&kp C_MUTE       &none      &none      &none      &kp SPACE  &none              &mkp LCLK        &none      &kp SPACE     &kp LS(LBRC)   &kp LS(RBRC)  &kp LS(DEL)
             >;
 
             display-name = "layer1";
@@ -109,11 +131,11 @@
 
         BTLAYER {
             bindings = <
-&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6  &kp F7  &kp F8      &kp F9     &kp F10      &trans
-&trans     &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &mmv MOVE_DOWN   &trans  &trans  &kp F11     &kp F12    &kp UNDER    &kp PLUS
-&trans     &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &mmv MOVE_LEFT   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
-&trans     &sys_reset    &trans          &bootloader   &trans        &trans          &mmv MOVE_RIGHT  &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
-&trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
+&kp LC(LS(ESCAPE))  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &none  &none  &none       &none      &none        &none
+&none               &bt BT_CLR    &bt BT_CLR_ALL  &none         &none         &none           &mmv MOVE_DOWN   &none  &none  &none       &none      &none        &none
+&none               &out OUT_USB  &out OUT_BLE    &none         &none         &none           &mmv MOVE_LEFT   &none  &none  &none       &none      &none        &none
+&none               &sys_reset    &none           &none         &none         &none           &mmv MOVE_RIGHT  &none  &none  &sys_reset  &soft_off  &bootloader  &none
+&none               &none         &none           &none         &none         &none           &mkp LCLK        &none  &none  &none       &none      &none
             >;
 
             display-name = "layer2";
